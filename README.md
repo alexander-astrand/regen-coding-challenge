@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Regen-coding-challenge
+
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
+## Overview
+
+Regen Coding Challenge is a web application built using [Next.js](https://nextjs.org/) and [Tailwind CSS](https://tailwindcss.com/). It integrates with the Keplr Wallet to allow users to connect their blockchain wallet, view account details (including REGEN balance), and send tokens. The app is designed to be responsive and user-friendly.
+
+## Features
+
+- **Wallet Integration:** Connect and disconnect your wallet using the Keplr extension.
+- **Account Details:** Display your account address and current REGEN balance.
+- **Token Transfers:** Send tokens directly from your connected wallet.
+- **Responsive Design:** Styled with Tailwind CSS for a modern, responsive interface.
+- **Realtime Updates:** Automatically updates your wallet balance after transactions.
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Node.js:** Version 16 or higher.
+- **Package Manager:** npm.
+- **Keplr Wallet:** Installed in your browser for wallet interactions.
+- **ChainInfo:** An updated and correct chainConfig.ts file to ensure connection to the correct blockchain network.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. **Clone the Repository:**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+   ```bash
+   git clone https://github.com/alexander-astrand/regen-coding-challenge.git
+   cd regen-coding-challenge
+   ```
 
-## Learn More
+2. **Install Dependencies**
 
-To learn more about Next.js, take a look at the following resources:
+    ```bash
+    npm install
+    ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. **Running Locally**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+    1. Start the Development Server:
+    Using npm:
+    ```bash
+    npm run dev
+    ```
 
-## Deploy on Vercel
+    2. Open Your Browser:
+    Navigate to http://localhost:3000 to see the application in action.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4. **Building for Production**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+    To create an optimized production build, use:
+    ```bash
+    npm run build
+    npm start
+    ```
+
