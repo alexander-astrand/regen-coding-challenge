@@ -1,6 +1,7 @@
-import { SigningStargateClient } from '@cosmjs/stargate';
-
 export interface ConnectWalletProps {
-  onConnected: (account: string, client: SigningStargateClient, balance: number) => void;
-  onDisconnected: () => void;
+  account: string;
+  balance: number;
+  loading: boolean;
+  connect: () => Promise<void>;
+  disconnect: () => void;
 }

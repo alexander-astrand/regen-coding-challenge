@@ -1,14 +1,7 @@
-import { OfflineSigner } from '@cosmjs/proto-signing';
-import { ChainInfo } from '@/types/ChainConfig';
+import { Window as KeplrWindow } from '@keplr-wallet/types';
 
 declare global {
-  interface Window {
-    keplr?: {
-      experimentalSuggestChain: (chainInfo: ChainInfo) => Promise<void>;
-      enable: (chainId: string) => Promise<void>;
-    };
-    getOfflineSigner?: (chainId: string) => OfflineSigner;
+  interface Window extends KeplrWindow {
+    customProperty?: string;
   }
 }
-
-export {};

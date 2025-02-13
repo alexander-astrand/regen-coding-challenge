@@ -1,6 +1,7 @@
 import { SigningStargateClient } from '@cosmjs/stargate';
 import { chainInfo } from '../../chainConfig';
-import { ChainInfo } from '@/types/ChainConfig';
+import { ChainInfo } from "@keplr-wallet/types"
+
 
 export const connectKeplr = async () => {
   if (!window.keplr) {
@@ -26,7 +27,7 @@ export const getBalance = async (client: SigningStargateClient, address: string)
     address,
     chainInfo.stakeCurrency.coinMinimalDenom
   );
-  return parseFloat(result.amount) / 1e6; // Convert from uregen to REGEN
+  return parseFloat(result.amount) / 1e6; // Converts from uregen to REGEN
 };
 
 export const sendTokens = async (
