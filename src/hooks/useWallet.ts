@@ -1,4 +1,3 @@
-// src/hooks/useWallet.ts
 import { useState, useCallback } from "react";
 import { connectKeplr, getBalance } from "@/utils/keplr";
 import { SigningStargateClient } from "@cosmjs/stargate";
@@ -8,7 +7,7 @@ import { WalletState } from "@/types/WalletState";
 export const useWallet = () => {
   const [wallet, setWallet] = useState<WalletState>({
     account: "",
-    client: undefined,
+    client: null,
     balance: 0,
     loading: false,
   });
@@ -27,11 +26,13 @@ export const useWallet = () => {
       toast.success("Wallet connected successfully!");
     } catch (error: unknown) {
       console.error("Error connecting wallet:", error);
+      let errorMsg = "An unknown error occurred while connecting the wallet.";
       if (error instanceof Error) {
-        toast.error(`Connection error: ${error.message}`);
-      } else {
-        toast.error("An unknown error occurred while connecting wallet.");
+        errorMsg = `Connection error: ${error.message}`;
       }
+      toast.error(
+        `${errorMsg} Please ensure your Keplr extension is installed, that you have approved the connection request, and that you are connected to the correct network.`
+      );
       setWallet((prev) => ({ ...prev, loading: false }));
     }
   }, []);
@@ -39,7 +40,7 @@ export const useWallet = () => {
   const disconnect = useCallback(() => {
     setWallet({
       account: "",
-      client: undefined,
+      client: null,
       balance: 0,
       loading: false,
     });

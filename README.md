@@ -4,7 +4,7 @@
 
 ## Overview
 
-Regen Coding Challenge is a web application built using [Next.js](https://nextjs.org/) and [Tailwind CSS](https://tailwindcss.com/). It integrates with the Keplr Wallet to allow users to connect their blockchain wallet, view account details (including REGEN balance), and send tokens. The app is designed to be responsive and user-friendly.
+Regen Coding Challenge is a web application built using [Next.js](https://nextjs.org/), [Typescript](https://www.typescriptlang.org/) and [Tailwind CSS](https://tailwindcss.com/). It integrates with the Keplr Wallet to allow users to connect their blockchain wallet, view account details (including REGEN balance), and send tokens. The app is designed to be responsive and user-friendly.
 
 ## Features
 
